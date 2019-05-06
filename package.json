@@ -1,0 +1,41 @@
+{
+  "name": "imagekit-react",
+  "version": "0.1.0",
+  "description": "ImageKit SDK for React",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshalbhatia/imagekit-react.git"
+  },
+  "keywords": [
+    "image-optimization",
+    "optimization",
+    "react"
+  ],
+  "author": "Harshal Bhatia <harshalbhatia244@gmail.com> (http://harshalbhatia.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harshalbhatia/imagekit-react/issues"
+  },
+  "homepage": "https://github.com/harshalbhatia/imagekit-react#readme",
+  "devDependencies": {
+    "@babel/cli": "7.4.4",
+    "@babel/core": "7.4.4",
+    "@babel/preset-env": "7.4.4",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.5",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "webpack": "^4.29.0",
+    "webpack-cli": "3.3.2"
+  },
+  "peerDependencies": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  }
+}
