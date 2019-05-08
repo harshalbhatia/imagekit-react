@@ -33,10 +33,16 @@ class Image extends React.Component {
 export default Image;
 
 Image.propTypes = {
-  urlEndpoint: PropTypes.string.isRequired,
+
   alt: PropTypes.string,
   transformations: PropTypes.arrayOf(PropTypes.object),
-  httpMethod: PropTypes.oneOf("http", "https")
+  httpMethod: PropTypes.oneOf("http", "https"),
+  src: PropTypes.string,
+  urlEndpoint: (props, propName, componentName) => {
+    if (!props.src && !props.urlEndpoint) {
+      return new Error(`One of props 'urlEndpoint' or 'src' was not specified in '${componentName}'.`);
+    }
+  }
 };
 
 Image.defaultProps = {
