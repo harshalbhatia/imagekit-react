@@ -12,9 +12,10 @@ class Image extends React.Component {
   }
 
   linkBuilder() {
-    const urlEndpoint = this.props.urlEndpoint;
-    const transformationString = "?tr=" + this.transformationBuilder();
-    return `${urlEndpoint}${this.props.path}${transformationString}`;
+    const src = this.props.src || this.props.urlEndpoint + this.props.path;
+    const transformationString = this.transformationBuilder();
+    // TODO: Properly merge query params
+    return transformationString ? src + "?tr=" + transformationString : src;
   }
 
   render() {
