@@ -84,3 +84,6 @@ In the above case, rotation will be performed first and resizing according to wi
 
 ### Unsupported Features
 [ImageKit](https://imagekit.io/) supports a lot more features. But many (some involving private keys, etc.) cannot be implemented on a client side library like `imagekit-react`.
+* Signed URLs
+* Uploads
+* Admin API
