@@ -34,7 +34,7 @@ You pass the following data, using which the complete URL is constructed.
 If you've saved the complete URL of images in your DBs, then using just a URL and applying transformations on that might be a better option for you.
 
 
-```
+```js
 <Image
     transformations={transformations}
     src="https://ik.imagekit.io/demo/medium_cafe_B1iTdD0C.jpg"
