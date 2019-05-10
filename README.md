@@ -37,7 +37,7 @@ If you've saved the complete URL of images in your DBs, then using just a URL an
 ```
 <Image
     transformations={transformations}
-    "https://ik.imagekit.io/demo/medium_cafe_B1iTdD0C.jpg"
+    src="https://ik.imagekit.io/demo/medium_cafe_B1iTdD0C.jpg"
 />
 ```
 
