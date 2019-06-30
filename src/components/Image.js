@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import queryString from "query-string";
+
 class Image extends React.Component {
   transformationBuilder() {
     return this.props.transformations
@@ -14,8 +16,14 @@ class Image extends React.Component {
   linkBuilder() {
     const src = this.props.src || this.props.urlEndpoint + this.props.path;
     const transformationString = this.transformationBuilder();
-    // TODO: Properly merge query params
-    return transformationString ? src + "?tr=" + transformationString : src;
+    console.log("TR:", transformationString);
+    const url = queryString.parseUrl(src);
+    const tr = url.query.tr ? url.query.tr + transformationString : transformationString;
+    if(!!tr) {
+      url.query.tr = tr;
+    }
+    const finalQuery = queryString.stringify(url.query, {arrayFormat: 'comma'});
+    return finalQuery ? url.url + "?" + finalQuery : url.url;
   }
 
   render() {

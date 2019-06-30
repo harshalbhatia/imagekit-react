@@ -32,12 +32,11 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "webpack": "4.30.0",
-    "webpack-cli": "3.3.2"
+    "webpack-cli": "3.3.2",
+    "prop-types": "15.7.2"
   },
   "peerDependencies": {
-    "react": "16.8.6"
-  },
-  "dependencies": {
-    "prop-types": "15.7.2"
+    "react": "16.8.6",
+    "query-string": "6.8.1"
   }
 }
