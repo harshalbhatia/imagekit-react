@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import queryString from "query-string";
+import { imagekitProps } from "../config/constants";
 
 class Image extends React.Component {
   transformationBuilder() {
@@ -27,8 +28,14 @@ class Image extends React.Component {
   }
 
   render() {
-    let link = this.linkBuilder();
-    return <img src={link} alt="" />;
+    const link = this.linkBuilder();
+    const imgProps = Object.keys(this.props).reduce((object, key) => {
+      if (!Object.keys(imagekitProps).includes(key)) {
+        object[key] = this.props[key];
+      }
+      return object
+    }, {})
+    return <img src={link} alt={this.props.alt || ""} {...imgProps} />;
   }
 }
 
@@ -36,6 +43,7 @@ export default Image;
 
 Image.propTypes = {
   alt: PropTypes.string,
+  path: PropTypes.string,
   transformations: PropTypes.arrayOf(PropTypes.object),
   httpMethod: PropTypes.oneOf("http", "https"),
   src: PropTypes.string,
